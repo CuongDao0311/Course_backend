@@ -1,7 +1,7 @@
-package com.luv2code.cruddemo;
+package com.cuongdao.course_backend;
 
-import com.luv2code.cruddemo.dao.AppDAO;
-import com.luv2code.cruddemo.entity.*;
+import com.cuongdao.course_backend.dao.AppDAO;
+import com.cuongdao.course_backend.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,27 +10,16 @@ import org.springframework.context.annotation.Bean;
 import java.util.List;
 
 @SpringBootApplication
-public class CruddemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CruddemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 
 		return runner -> {
-
-			// createCourseAndStudents(appDAO);
-
-			// findCourseAndStudents(appDAO);
-
-			// findStudentAndCourses(appDAO);
-
-			// addMoreCoursesForStudent(appDAO);
-
-			// deleteCourse(appDAO);
-
 			deleteStudent(appDAO);
 
 		};
@@ -51,11 +40,9 @@ public class CruddemoApplication {
 		int theId = 2;
 		Student tempStudent = appDAO.findStudentAndCoursesByStudentId(theId);
 
-		// create more courses
 		Course tempCourse1 = new Course("Rubik's Cube - How to Speed Cube");
 		Course tempCourse2 = new Course("Atari 2600 - Game Development");
 
-		// add courses to student
 		tempStudent.addCourse(tempCourse1);
 		tempStudent.addCourse(tempCourse2);
 
@@ -91,18 +78,14 @@ public class CruddemoApplication {
 
 	private void createCourseAndStudents(AppDAO appDAO) {
 
-		// create a course
 		Course tempCourse = new Course("Pacman - How To Score One Million Points");
 
-		// create the students
 		Student tempStudent1 = new Student("John", "Doe", "john@luv2code.com");
 		Student tempStudent2 = new Student("Mary", "Public", "mary@luv2code.com");
 
-		// add students to the course
 		tempCourse.addStudent(tempStudent1);
 		tempCourse.addStudent(tempStudent2);
 
-		// save the course and associated students
 		System.out.println("Saving the course: " + tempCourse);
 		System.out.println("associated students: " + tempCourse.getStudents());
 
@@ -113,14 +96,11 @@ public class CruddemoApplication {
 
 	private void retrieveCourseAndReviews(AppDAO appDAO) {
 
-		// get the course and reviews
 		int theId = 10;
 		Course tempCourse = appDAO.findCourseAndReviewsByCourseId(theId);
 
-		// print the course
 		System.out.println(tempCourse);
 
-		// print the reviews
 		System.out.println(tempCourse.getReviews());
 
 		System.out.println("Done!");
@@ -128,7 +108,6 @@ public class CruddemoApplication {
 
 	private void createCourseAndReviews(AppDAO appDAO) {
 
-		// create a course
 		Course tempCourse = new Course("Pacman - How To Score One Million Points");
 
 		// add some reviews

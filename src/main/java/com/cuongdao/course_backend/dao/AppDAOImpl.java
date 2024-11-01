@@ -1,9 +1,9 @@
-package com.luv2code.cruddemo.dao;
+package com.cuongdao.course_backend.dao;
 
-import com.luv2code.cruddemo.entity.Course;
-import com.luv2code.cruddemo.entity.Instructor;
-import com.luv2code.cruddemo.entity.InstructorDetail;
-import com.luv2code.cruddemo.entity.Student;
+import com.cuongdao.course_backend.entity.Course;
+import com.cuongdao.course_backend.entity.Instructor;
+import com.cuongdao.course_backend.entity.InstructorDetail;
+import com.cuongdao.course_backend.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;

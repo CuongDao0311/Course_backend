@@ -1,4 +1,4 @@
-package com.luv2code.cruddemo.entity;
+package com.cuongdao.course_backend.entity;
 
 import jakarta.persistence.*;
 
